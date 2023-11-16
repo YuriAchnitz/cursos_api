@@ -10,7 +10,7 @@ services:
     - db-volume:/var/lib/postgresql/data
 
   api:
-    image: cursos_api
+    image: yuriachnitz/cursos_api
     environment:
       DB_HOST: database
     ports:
