@@ -4,6 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import grupo3.cursos_api.modelo.Professor;
 
-public interface ProfessorRepository extends JpaRepository<Professor, Long>{
-
+public interface ProfessorRepository extends JpaRepository<Professor, Long> {
+	Professor findByNome(String nome);
+	
+	Professor findByMatricula(String matricula);
 }
