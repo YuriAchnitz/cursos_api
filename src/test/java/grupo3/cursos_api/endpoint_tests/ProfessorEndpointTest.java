@@ -1,4 +1,6 @@
-package grupo3.cursos_api;
+package grupo3.cursos_api.endpoint_tests;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,26 +14,25 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @RunWith(SpringRunner.class)
 @ComponentScan(basePackages = { "grupo3.cursos_api" })
 @SpringBootTest
 @AutoConfigureMockMvc
-class CursosApiApplicationTests {
-	
+
+public class ProfessorEndpointTest {
 	@Autowired
-    private MockMvc mockMvc;
+	private MockMvc mockMvc;
 
 	@Test
-	void createCursoDefault() throws Exception {
-		final String expectedNome = "Criação de Pneus";
-		final int expectedPreco = 50;
-		mockMvc.perform(MockMvcRequestBuilders.post("/cursos").contentType(MediaType.APPLICATION_JSON)
-				.content("{\"nome\":\"Criação de Pneus\",\"preco\":50}"))
+	public void testeCriarAluno() throws Exception {
+		final String expectedNome = "Pelé";
+		final String expectedMatricula = "EA10";
+
+		mockMvc.perform(MockMvcRequestBuilders.post("/professores").contentType(MediaType.APPLICATION_JSON)
+				.content("{\"nome\":\"Pelé\",\"matricula\":\"EA10\"}"))
 				.andExpect(MockMvcResultMatchers.status().is(201))
 				.andExpect((ResultMatcher) jsonPath("nome").value(expectedNome))
-				.andExpect((ResultMatcher) jsonPath("preco").value(expectedPreco));
+				.andExpect((ResultMatcher) jsonPath("matricula").value(expectedMatricula));
 	}
-
 }
