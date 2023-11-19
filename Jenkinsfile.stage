@@ -19,9 +19,7 @@ pipeline {
     }
     stage('Run tests against the container') {
       steps {
-        script {
           bat "docker exec cursos_api-pipeline-stage-api_stage-1 curl http://localhost:9090"
-        }
       }
     }
   }
