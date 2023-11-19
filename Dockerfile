@@ -1,4 +1,4 @@
-FROM openjdk:17-alpine
+FROM openjdk:17-jdk-slim
 
 WORKDIR /cursos_api
 COPY target/*.jar /cursos_api/cursos_api-0.0.1-SNAPSHOT.jar
