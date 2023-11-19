@@ -146,5 +146,5 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 </project>
