@@ -17,11 +17,7 @@ pipeline {
         bat 'docker compose -f docker-compose.stage.yml ps'
       }
     }
-    stage('Wait for container') {
-      steps {
-        bat 'timeout 15'
-      }
-    }
+    
     stage('Run tests against the container') {
       steps {
         script {
