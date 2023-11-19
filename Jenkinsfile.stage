@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Wait for container') {
       steps {
-        bat 'ping 127.0.0.1 -n 16 > nul'
+        bat 'ping 127.0.0.1 -n 6 > nul'
       }
     }
     stage('Run tests against the container') {
