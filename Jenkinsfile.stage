@@ -17,11 +17,12 @@ pipeline {
         bat 'docker compose -f docker-compose.stage.yml ps'
       }
     }
-    
+
     stage('Run tests against the container') {
       steps {
-        curl http://localhost:9090
+        bat 'curl http://localhost:9090'
       }
     }
   }
+  
 }
