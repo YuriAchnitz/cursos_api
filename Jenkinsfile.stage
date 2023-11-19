@@ -17,11 +17,6 @@ pipeline {
         bat 'docker compose -f docker-compose.stage.yml ps'
       }
     }
-    stage('Wait for container') {
-      steps {
-        bat 'ping 127.0.0.1 -n 6 > nul'
-      }
-    }
     stage('Run tests against the container') {
       steps {
         script {
