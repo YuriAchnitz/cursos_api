@@ -18,10 +18,12 @@ pipeline {
       }
     }
 
-   stage('Run tests against the container') {
+    stage('Run tests against the container') {
       steps {
         script {
-          bat "docker exec cursos_api-pipeline-stage curl http://localhost:9090"
+          def containerIds = bat(returnStdout: true, script: 'docker compose -f docker-compose.stage.yml ps -q').trim().split('\n')
+          def desiredContainerId = containerIds[0] 
+          bat "docker exec '${desiredContainerId}' curl http://localhost:9090"
         }
       }
     }
