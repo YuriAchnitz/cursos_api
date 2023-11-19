@@ -147,7 +147,7 @@
 							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>grupo3.cursos_api.CursosApiApplication</mainClass>
+							<mainClass>grupo3.cursos_api.CursosApiApplication.java</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
