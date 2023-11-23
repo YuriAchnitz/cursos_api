@@ -183,5 +183,5 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 </project>
