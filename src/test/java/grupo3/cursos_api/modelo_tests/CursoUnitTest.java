@@ -1,5 +1,6 @@
 package grupo3.cursos_api.modelo_tests;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -45,6 +46,18 @@ public class CursoUnitTest {
 		curso2.setId(null);
 		assertTrue(curso.equals(curso2));
 		
+	}
+	
+	@Test
+	public void testCursoHash() {
+		Curso curso = new Curso();
+		
+		//Valor de id null
+		assertEquals(31, curso.hashCode());
+		
+		//Valor esperado de id 999
+		curso.setId((long)999);
+		assertEquals(1030, curso.hashCode());
 	}
 	
 }

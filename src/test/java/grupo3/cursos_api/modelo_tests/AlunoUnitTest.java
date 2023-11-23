@@ -65,6 +65,17 @@ public class AlunoUnitTest {
 		aluno.setId(null);
 		aluno2.setId(null);
 		assertTrue(aluno.equals(aluno2));
+	}
+	
+	@Test
+	public void testAlunoHash() {
+		Aluno aluno = new Aluno();
 		
+		//Valor de id null
+		assertEquals(31, aluno.hashCode());
+		
+		//Valor esperado de id 999
+		aluno.setId((long)999);
+		assertEquals(1030, aluno.hashCode());
 	}
 }

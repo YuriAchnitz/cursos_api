@@ -1,5 +1,6 @@
 package grupo3.cursos_api.modelo_tests;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -11,7 +12,7 @@ import grupo3.cursos_api.modelo.Professor;
 public class ProfessorUnitTest {
 
 	@Test
-	public void testCursoEquals() {
+	public void testProfessorEquals() {
 		Professor professor = new Professor("Lebron James", "LB23");
 		Professor professor_copia = professor;
 		
@@ -45,5 +46,17 @@ public class ProfessorUnitTest {
 		professor2.setId(null);
 		assertTrue(professor.equals(professor2));
 		
+	}
+	
+	@Test
+	public void testProfessorHash() {
+		Professor professor = new Professor();
+		
+		//Valor de id null
+		assertEquals(31, professor.hashCode());
+		
+		//Valor esperado de id 999
+		professor.setId((long)999);
+		assertEquals(1030, professor.hashCode());
 	}
 }
