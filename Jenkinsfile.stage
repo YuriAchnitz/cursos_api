@@ -17,9 +17,14 @@ pipeline {
         bat 'docker compose -f docker-compose.stage.yml ps'
       }
     }
+    stage('Wait for container') {
+      steps {
+        bat 'ping 127.0.0.1 -n 11 > nul'
+      }
+    }
     stage('Run tests against the container') {
       steps {
-          bat "docker exec cursos_api-pipeline-stage-api_stage-1 curl http://localhost:9090"
+          bat "curl http://localhost:9090"
       }
     }
   }
