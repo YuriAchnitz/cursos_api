@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Show start message')
+    stage('Show start message') {
       steps{
         bat "echo Subindo contâiner de produção."
       }
@@ -31,7 +31,8 @@ pipeline {
       steps {
           bat "curl http://localhost:8181"
       }
-    stage('Show end message')
+    }
+    stage('Show end message') {
       steps{
         bat "echo O contâiner de produção está funcionando."
       }
