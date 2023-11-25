@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Show start message') {
       steps{
-        bat "echo Subindo contâiner de produção."
+        bat "echo Subindo container de producao."
       }
     }
     stage("verify tooling") {
@@ -34,7 +34,7 @@ pipeline {
     }
     stage('Show end message') {
       steps{
-        bat "echo O contâiner de produção está funcionando."
+        bat "echo O container de producao esta funcionando."
       }
     }
   }
