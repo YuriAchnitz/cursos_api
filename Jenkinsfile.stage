@@ -38,7 +38,7 @@ post {
             [
               type: 'button',
               text: 'Deploy to production',
-              url: 'http://localhost:8180/job/cursos_api-pipeline-prod/build?delay=0sec',
+              url: 'http://localhost:8180//job/cursos_api-pipeline-prod/build?token=AuthToken',
               style: 'primary'
             ]
           ]
